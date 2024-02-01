@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <style>
+     
+        body{
+            background-image: url("https://media.istockphoto.com/id/1220471324/photo/design-element-wood-texture-and-background-wooden-texture-floor-shelf-for-product-display.jpg?s=1024x1024&w=is&k=20&c=XgcDIlEZsGcvJk7uCkd7jVK5qNvfYVR_kaXC7ztS728=");
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        div.outer{
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 460px;
+            width: 420px;
+            background-color: rgb(84, 83, 83);
+            position: relative;
+            top: 30px;
+            right: 0px;
+        }
+        div.inner{
+            border: 2px solid black;
+            border-radius: 10px;
+            position: relative;
+            bottom: 17px;
+            margin-top: 30px;
+            height: 430px;
+            width: 395px;
+        }
+        div.a1,.a2,.a3,.a4{
+            height: 10px;
+            width: 10px;
+            border-radius: 25px;
+            background-color: black;
+        }
+        div.a1{
+            position: relative;
+            left: 200px;
+            bottom: 12px;
+        }
+        div.a2{
+            position: relative;
+            right: 201px;
+            bottom: 22px;
+        }
+        div.a3{
+            position: relative;
+            left: 202px;
+            top: 410px;
+        }
+        div.a4{
+            position: relative;
+            right: 202px;
+            top: 401px;
+        }
+        div.type{
+            position: relative;
+            bottom: 30px;
+        }
+        input{
+            padding: 18px 75px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            color: rgb(84, 83, 83);
+            font-weight: bold;
+        }
+        button{
+            padding: 23px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            background-color: rgb(114, 110, 110);
+        }
+        button.b7{
+            position: relative;
+            right: 6px;
+            bottom: 8px;
+        }
+        button.b8{
+            position: relative;
+            right: 0px;
+            bottom: 8px;
+        }
+        button.b9{
+            position: relative;
+            right: -5px;
+            bottom: 8px;
+        }
+        button.b4{
+            position: relative;
+            right: 225px;
+            top: 65px;
+        }
+        button.b5{
+            position: relative;
+            right: 219px;
+            top: 65px;
+        }
+        button.b6{
+            position: relative;
+            left: 147px;
+            top: 1px;
+        }
+        button.b1{
+            position: relative;
+            right: 82px;
+            top: 75px;
+        }
+        button.b2{
+            position: relative;
+            right: 71.5px;
+            top: 75px;
+        }
+        button.b3{
+            position: relative;
+            right: 68px;
+            top: 75px;
+        }
+        button.b00{
+            position: relative;
+            right: 292.5px;
+            top: 145px;
+            padding: 19.5px 25px;
+        }
+        button.b10{
+            position: relative;
+            top: 83.5px;
+            padding: 20px 30px;
+        }
+        button.dot{
+            position: relative;
+            right: -9px;
+            top: 83.5px;
+            padding: 20px 32px;
+            font-weight: bolder;
+        }
+        button.coma{
+            position: relative;
+            right: -12px;
+            top: 83.5px;
+            padding: 20px 32px;
+            font-weight: bolder;
+        }
+        div.num{
+            position: relative;
+            bottom: 475px;
+            right: 1px;
+        }
+        button.mod{
+            position: relative;
+            right: 120px;
+            bottom: 21px;
+            padding: 20px 28px;
+        }
+        button.remAll{
+            position: relative;
+            right: 110px;
+            bottom: 21px;
+            padding: 20px 29px; 
+        }
+       
+        button.del{
+            position: relative;
+            left: 147px;
+            bottom: 223px;
+            padding: 20px 20px;
+        }
+        button.dvd{
+            position: relative;
+            left: 153px;
+            bottom: 2px;
+            font-size: 20px;
+            height: 65.5px;
+        }
+        button.multiply{
+            position: relative;
+            left: 677px;
+            top: 330px;
+            padding: 23px 31px;
+            z-index: 1;
+        }
+        button.sub{
+            position: relative;
+            left: 78px;
+            top: -152px;
+        }
+        button.plus{
+            position: relative;
+            right: -4px;
+            bottom: 223px;
+            padding: 21px 29px; 
+        }
+        button.ans{
+            position: relative;
+            left: 13px;
+            bottom: 80px;
+            height: 347px;
+            background-color: rgb(141, 140, 140);
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(75, 74, 74);
+        }
+        div.num{
+            position: relative;
+            bottom: 407px;
+        }
+        div.main{
+            position: relative;
+            bottom: 50px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+    <button class="multiply" onclick="getValue('*')">x</button>
+<center>
+    <div class="outer">
+        <div class="inner">
+             <div class="a1"></div>
+             <div class="a2"></div>
+             <div class="a3"></div>
+             <div class="a4"></div> 
+
+            <div class="type">
+                <input type="text" name="write" id="write">
+            </div>
+
+            <div class="remover">
+                <button class="mod" onclick="getValue('%')">%</button><button class="remAll" onclick="delAll()">C</button>
+            </div>
+
+            <div class="oprt">
+                <button class="del" onclick="del()">DEL</button><button class="dvd" onclick="getValue('/')">&divide;</button>
+               <button class="sub" onclick="getValue('-')">&minus;</button>
+                <button class="plus" onclick="getValue('+')">+</button><button class="ans" onclick="ans()">=</button>
+            </div>
+
+            <br><br><br>
+
+            <div class="num">
+                <button class="b7" onclick="getValue(7)">7</button> <button class="b8" onclick="getValue(8)">8</button>
+                <button class="b9" onclick="getValue(9)">9</button> <button class="b4" onclick="getValue(4)">4</button>
+                <button class="b5" onclick="getValue(5)">5</button> <button class="b6" onclick="getValue(6)">6</button>
+                <button class="b1" onclick="getValue(1)">1</button><button class="b2" onclick="getValue(2)">2</button>
+                <button class="b3" onclick="getValue(3)">3</button><button class="b00" onclick="getValue('00')">00</button> 
+                <button class="b10" onclick="getValue(0)">0</button><button class="dot" onclick="getValue('.')">.</button>
+                <button class="coma" onclick="getValue(',')">,</button>
+            </div>
+        </div>
+
+    </div>
+</center>
+</div>
+<script>
+var sum = " ";
+function getValue(calculate) {
+    sum+=calculate;
+    var input = document.getElementById("write");
+    input.value = sum;
+}
+    
+function ans() {
+    var input = document.getElementById("write");
+    var result = eval(input.value)
+    input.value = result;
+}
+
+function delAll() {
+    var input = document.getElementById("write");
+    input.value = " "
+}
+
+function del() {
+    var input = document.getElementById("write");
+    input.value = input.value.toString().slice(0,-1);
+}
+</script>
+</body>
+</html>
