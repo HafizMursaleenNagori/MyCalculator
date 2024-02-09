@@ -260,27 +260,38 @@
 </center>
 </div>
 <script>
-var sum = " ";
+// var sum = "";
+// function getValue(calculate) {
+//     sum+=calculate;
+//     var input = document.getElementById("write");
+//     input.value = sum;
+// }
+
+// Selecting the result input element
+var input = document.getElementById("write");
+
+// Function to handle button clicks
 function getValue(calculate) {
-    sum+=calculate;
-    var input = document.getElementById("write");
-    input.value = sum;
+    input.value+=calculate;
 }
-    
+
+// Function to evaluate the expression
 function ans() {
     var input = document.getElementById("write");
     var result = eval(input.value)
     input.value = result;
 }
 
+// Function to clear the input
 function delAll() {
     var input = document.getElementById("write");
-    input.value = " "
+    input.value = ""
 }
 
+// Function to delete the last character
 function del() {
     var input = document.getElementById("write");
-    input.value = input.value.toString().slice(0,-1);
+    input.value = input.value.slice(0,-1);
 }
 </script>
 </body>
